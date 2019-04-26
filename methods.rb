@@ -5,6 +5,7 @@ def help
     puts "new_post:    Make a new post"
     puts "    home:    Takes you to the home page"
     puts "  (h)elp:    Shows this page"
+    puts "       q:    Exits the program"
 end
 
 def seed_post_data(post_history)

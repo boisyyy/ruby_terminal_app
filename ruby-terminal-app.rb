@@ -15,23 +15,27 @@ username = ""
 password = ""
 
 ##Giving the option to either login or sign up
-puts "press 1 to login press 2 to sign up press 3 to quit"
+table = Terminal::Table.new do |t|
+    t << ['               Welcome to Quantumblur
+Press 1 to login press 2 to sign up press 3 to quit']
+  end
+puts table
 option = gets.to_i
 
 #Login option
 if option == 1
-    puts "please enter your username"
+    puts "Please enter your username:"
     name = gets.chomp
     username = name
-    puts "Please enter your password"
+    puts "Please enter your password:"
     password = gets.chomp
     login = Login.new(username, password)
 #Signup option
 elsif option == 2
-    puts "please enter a username"
+    puts "Please enter a username:"
     name = gets.chomp
     username << name
-    puts "Please enter a password"
+    puts "Please enter a password:"
     password = gets.chomp
     signup = Signup.new(username, password)
 #Quit option
@@ -40,6 +44,7 @@ else
     abort
 end
 
+puts "\e[H\e[2J"
 help
 # nav
 action = gets.strip.downcase
